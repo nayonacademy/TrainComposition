@@ -15,7 +15,7 @@
                         Locomotive: {{ i.locomotiveType }} <br>
                         Wagons: {% for w in i.wagons %}
                             {{ w.wagonType }},
-                        {% endfor %}
+                        {% endfor %} ({{ i.totalLength }}) meters
                         <br>
                         Max speed: {{ i.maximumSpeed }}KM/h
                     </div>
