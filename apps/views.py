@@ -1,13 +1,15 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 import json, requests
+from time import gmtime, strftime
 # Create your views here.
 
 def index(request):
     url = 'https://rata.digitraffic.fi/api/v1/live-trains?station=SLO'
     resp = requests.get(url=url)
     data = json.loads(resp.text)
-    date = '2017-05-02'
+    # date = '2017-05-02'
+    date = strftime("%Y-%m-%d", gmtime())
     finaldata = {}
     case_list = []
     for i in data:
