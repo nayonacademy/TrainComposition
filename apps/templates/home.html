@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col-md-12">
+    		<h1 style="text-align: center">Train Composition Viewer</h1>
+{#        {% for i in data %}#}
+{#        <ul>#}
+{#        {% for n in  i.timeTableRows%}#}
+{#            <li>                        stationShortCode {{ n.stationShortCode }} <br>#}
+{#                        countryCode {{ n.countryCode }} <br>#}
+{#                        type {{ n.type }} <br>#}
+{#                        scheduledTime {{ n.scheduledTime }} <br></li>#}
+{#        {% endfor %}#}
+{#        </ul>#}
+{#        {% endfor %}#}
+        <div class="wrapperarea">
+            {% for i in finaldata %}
+                <div class="col-sm-4">
+                    <div class="compo">
+                        {{ i.trainNumber }} {{ i.stationShortCode }} - {{ i.stationShortCode2 }} <br>
+                        Locomotive: {{ i.locomotiveType }} <br>
+                        Wagons: {% for w in i.wagons %}
+                            {{ w.wagonType }},
+                        {% endfor %}
+                        <br>
+                        Max speed: {{ i.maximumSpeed }}KM/h
+                    </div>
+                </div>
+            {% endfor %}
+        <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</div>
+{#		<table style='cellpadding:0; cellpsacing:0; width:100%; height:100%; border: 1px solid black;'>#}
+{#        {% for i in data %}#}
+{#            <tr>#}
+{##}
+{#                 {% for n in  i.timeTableRows%}#}
+{#                     <td style='text-align: center;border: 1px solid'>#}
+{#                        stationShortCode {{ n.stationShortCode }} <br>#}
+{#                        countryCode {{ n.countryCode }} <br>#}
+{#                        type {{ n.type }} <br>#}
+{#                        scheduledTime {{ n.scheduledTime }} <br>#}
+{#                      </td>#}
+{#                 {% endfor %}#}
+{##}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#		<tr>#}
+{#			<td style='text-align: center;'>#}
+{#				<!-- trainType + trainNumber    beginStation - endStation -->#}
+{#				S967 HKI-TKU<br>#}
+{#				<!-- Locomotive type and power type -->#}
+{#				Locomotive: SM3 Electric<br>#}
+{#				<!-- Wagon types and theirs total length-->#}
+{#				Wagons: CM, IM, TTC, IM1 (99 meters)<br>#}
+{#				<!-- Train max speed -->#}
+{#				Max speed: 200KM/h#}
+{#			</td>#}
+{#		    <td style='text-align: center;'>#}
+{#				IC962 TKU-HKI<br>#}
+{#				Locomotive: SR2 Electric<br>#}
+{#				Wagons: Edo, Edb, ERd, Ed (126 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#			<td style='text-align: center;'>#}
+{#				IC972 TUS-HKI<br>#}
+{#				Locomotive: SR2 Electric<br>#}
+{#				Wagons: Edo, Edb, ERd, Eds (126 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#		</tr>#}
+{##}
+{#		<tr>#}
+{#			<td style='text-align: center;'>#}
+{#				IC945 HKI-TKU<br>#}
+{#				Locomotive: SR2 Electric<br>#}
+{#				Wagons: Edfs, Edb, Edo (99 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#		    <td style='text-align: center;'>#}
+{#				IC948 TUS-HKI<br>#}
+{#				Locomotive: Sr2 Electric<br>#}
+{#				Wagons: Edo, Edb, ERd, Eds, Ed (152 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#			<td style='text-align: center;'>#}
+{#				IC951 HKI-TKU<br>#}
+{#				Locomotive: Sr2 Electric<br>#}
+{#				Wagons: Edo, Edb, ERd, Eds (126 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#		</tr>#}
+{##}
+{#		<tr>#}
+{#			<td style='text-align: center;'>#}
+{#				IC954 TKU-HKI<br>#}
+{#				Locomotive: Sr2 Electric<br>#}
+{#				Wagons: Edo, Edb, Edfs (99 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#		    <td style='text-align: center;'>#}
+{#				IC955 HKI-TKU<br>#}
+{#				Locomotive: Sr2 Electric<br>#}
+{#				Wagons: Edo, Edb, Edfs (99 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#			<td style='text-align: center;'>#}
+{#				IC958 TKU-HKI<br>#}
+{#				Locomotive: SM3 Electric<br>#}
+{#				Wagons: IM1, CMH, TTC, TT, CM, IM2 (160 meters)<br>#}
+{#				Max speed: 200KM/h#}
+{#			</td>#}
+{#		</tr>#}
+{#		<tr>#}
+{#			<td style='text-align: center;'>#}
+{#				IC960 TKU-HKI<br>#}
+{#				Locomotive: Sr2 Electric<br>#}
+{#				Wagons: Edo, Edb, Edfs, Ed (126 meters)<br>#}
+{#				Max speed: 160KM/h#}
+{#			</td>#}
+{#		</tr>#}
+{#		</table>#}
+{% endblock content %}
