@@ -20,10 +20,11 @@ def index(request):
         try:
             wagon = []
             case = {'trainNumber' : data1['trainNumber'],
-                    'trainType': data1['trainNumber'],
+                    'trainType': data1['trainType'],
                     'stationShortCode': data1['journeySections'][0]['beginTimeTableRow']['stationShortCode'],
                     'stationShortCode2' : data1['journeySections'][0]['endTimeTableRow']['stationShortCode'],
                     'locomotiveType': data1['journeySections'][0]['locomotives'][0]['locomotiveType'],
+                    'powerType': data1['journeySections'][0]['locomotives'][0]['powerType'],
                     'wagons' : wagon,
                     'maximumSpeed': data1['journeySections'][0]['maximumSpeed'],
                     'totalLength': data1['journeySections'][0]['totalLength']

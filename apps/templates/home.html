@@ -11,8 +11,8 @@
             {% for i in finaldata %}
                 <div class="col-sm-4">
                     <div class="compo">
-                        {{ i.trainNumber }} {{ i.stationShortCode }} - {{ i.stationShortCode2 }} <br>
-                        Locomotive: {{ i.locomotiveType }} <br>
+                       {{ i.trainType }}{{ i.trainNumber }} {{ i.stationShortCode }} - {{ i.stationShortCode2 }} <br>
+                        Locomotive: {{ i.locomotiveType }} {{ i.powerType }}<br>
                         Wagons: {% for w in i.wagons %}
                             {{ w.wagonType }},
                         {% endfor %} ({{ i.totalLength }}) meters
