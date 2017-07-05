@@ -15,9 +15,6 @@ def index(request):
         url1 = 'https://rata.digitraffic.fi/api/v1/compositions/'+str(tranno)+'?departure_date='+date
         resp1 = requests.get(url=url1)
         data1 = json.loads(resp1.text)
-
-
-
         try:
             wagon = []
             case = {'trainNumber' : data1['trainNumber'],
@@ -38,25 +35,8 @@ def index(request):
                     wagon.append(wgn)
             except:
                 pass
-            # finaldata['trainNumber'] = data1['trainNumber']
-            # finaldata['trainType']=data1['trainType']
-            # finaldata['stationShortCode']=data1['journeySections'][0]['beginTimeTableRow']['stationShortCode']
-            # finaldata['stationShortCode']=data1['journeySections'][0]['endTimeTableRow']['stationShortCode']
-            # finaldata['locomotiveType']=data1['journeySections'][0]['locomotives'][0]['locomotiveType']
-            # finaldata['maximumSpeed']=data1['journeySections'][0]['maximumSpeed']
-            # finaldata['totalLength']=data1['journeySections'][0]['totalLength']
-            #
-            # print(data1['trainNumber'],
-            #       data1['trainType'],
-            #       data1['journeySections'][0]['beginTimeTableRow']['stationShortCode'],
-            #       data1['journeySections'][0]['endTimeTableRow']['stationShortCode'],
-            #       data1['journeySections'][0]['locomotives'][0]['locomotiveType'],
-            #       data1['journeySections'][0]['maximumSpeed'],
-            #       data1['journeySections'][0]['totalLength'],
-            #       )
         except:
             pass
-    # print(finaldata)
     print(case_list)
     context = {
         'data': data,
